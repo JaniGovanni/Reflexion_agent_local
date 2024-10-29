@@ -1,0 +1,16 @@
+# Core dependencies
+langchain>=0.1.0
+langchain-core>=0.1.0
+langgraph>=0.0.10
+pydantic>=2.0.0
+typing-extensions>=4.0.0
+
+# LLM providers
+langchain-groq>=0.0.1
+langchain-anthropic>=0.0.5
+langchain-ollama>=0.0.1
+
+# Tools and utilities
+langchain-community>=0.0.10
+python-dotenv>=0.19.0
+tavily-python>=0.1.9
