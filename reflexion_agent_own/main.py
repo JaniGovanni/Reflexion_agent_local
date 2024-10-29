@@ -42,7 +42,7 @@ builder.add_conditional_edges(
 builder.set_entry_point("INITIAL_WRITER")
 
 graph = builder.compile()
-graph.get_graph().draw_mermaid_png(output_file_path="reflection_agent_own/graph.png")
+graph.get_graph().draw_mermaid_png(output_file_path="graph.png")
 
 
 
