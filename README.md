@@ -31,42 +31,36 @@ The agent follows a cyclic workflow through five key stages:
    - Clarity
 
 ![alt text](graph.png)
+
+
 The graph will loop through steps 2-5 up to `MAX_ITERATIONS` times (default: 2) or until the quality meets requirements.
-
-## Features
-
-- Runs completely locally using Ollama (optional cloud LLM support available)
-- Initial answer generation
-- Self-critique and reflection with structured output using llama 3.2 : 3b
-- Web search integration using Tavily Search API
-- Answer rewriting with source citations
 
 ## Components
 
 1. **Main Script**: The entry point that sets up the graph workflow.
-   ```python:reflection_agent_own/main.py```
+   ```python:main.py```
 
 2. **Nodes**: Contains the core logic for different stages of the reflection process:
    - Initial answer generation
    - Self-critique
    - Web search integration
    - Answer rewriting
-   ```python:reflection_agent_own/nodes/__init__.py```
+   ```python:reflexion_agent_own/nodes/__init__.py```
 
 3. **Chains**: Defines the LangChain prompt templates and chains for each node.
-   ```python:reflection_agent_own/chains/__init__.py```
+   ```python:reflexion_agent_own/chains/__init__.py```
 
 4. **Output Schemas**: Contains Pydantic models for structured outputs.
-   ```python:reflection_agent_own/output_schemas/__init__.py```
+   ```python:reflexion_agent_own/output_schemas/__init__.py```
 
 5. **LLM Integration**: Provides functions to initialize different language models:
    - Ollama (local)
    - Groq (cloud)
    - Anthropic (cloud)
-   ```python:reflection_agent_own/llm/__init__.py```
+   ```python:reflexion_agent_own/llm/__init__.py```
 
 6. **State Management**: Defines the TypedDict for managing the agent's state.
-   ```python:reflection_agent_own/state/__init__.py```
+   ```python:reflexion_agent_own/state/__init__.py```
 
 ## Setup
 
@@ -76,7 +70,7 @@ The graph will loop through steps 2-5 up to `MAX_ITERATIONS` times (default: 2) 
    pip install -r requirements.txt
    ```
 3. Install Ollama from [ollama.ai](https://ollama.ai)
-4. Pull your preferred ollama model:
+4. Pull ollama model:
    ```
    ollama pull llama3.2
    ```
