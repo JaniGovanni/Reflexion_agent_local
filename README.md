@@ -92,8 +92,8 @@ The graph will loop through steps 2-5 up to `MAX_ITERATIONS` times (default: 2) 
 
 ## Customization
 
+- Try out with your own questions in `main.py`
 - Adjust the `MAX_ITERATIONS` in the main script to control the number of reflection cycles
-- Modify the prompts in the `chains/__init__.py` file to fine-tune the agent's behavior
 - Choose between different LLM providers by modifying the LLM initialization in `main.py`:
   - `get_ollama_llm()` for local models
   - `get_groq_llm()` for Groq API
