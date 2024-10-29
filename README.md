@@ -98,3 +98,13 @@ The graph will loop through steps 2-5 up to `MAX_ITERATIONS` times (default: 2) 
   - `get_ollama_llm()` for local models
   - `get_groq_llm()` for Groq API
   - `get_anthropic_llm()` for Claude models
+
+## important note
+
+While working with Llama 3.2 I have noticed, that the prompt templates must follow a specific structure to work effectively. It is crucial to always include both system and user messages, if you want to generate structured output. The template should look something like this to work:
+   ```python
+   custom_structured_output_template = ChatPromptTemplate.from_messages([
+       ("system", instruction),
+       ("user", "Please provide the outputin the specified format.")
+   ])
+   ```
