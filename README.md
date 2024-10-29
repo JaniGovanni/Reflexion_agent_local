@@ -30,8 +30,8 @@ The agent follows a cyclic workflow through five key stages:
    - Accuracy
    - Clarity
 
-The graph will loop through steps 2-5 up to `MAX_ITERATIONS` times (default: 2) or until the quality meets requirements.
 ![alt text](graph.png)
+The graph will loop through steps 2-5 up to `MAX_ITERATIONS` times (default: 2) or until the quality meets requirements.
 
 ## Features
 
