@@ -4,6 +4,7 @@ from state import GraphState
 from llm import get_groq_llm, get_ollama_llm
 import os
 import argparse
+from PIL import Image
 
 MAX_ITERATIONS = 2
 builder = StateGraph(GraphState)
@@ -44,6 +45,24 @@ builder.set_entry_point("INITIAL_WRITER")
 graph = builder.compile()
 graph.get_graph().draw_mermaid_png(output_file_path="graph.png")
 
+with Image.open("graph.png") as img:
+    # Get original dimensions
+    width, height = img.size
+    # Calculate the target size (use the larger dimension)
+    max_dim = max(width, height)
+    
+    # Create a new white image with square dimensions
+    result = Image.new('RGB', (max_dim, max_dim), 'white')
+    
+    # Calculate position to paste original image (center it)
+    x = (max_dim - width) // 2
+    y = (max_dim - height) // 2
+    
+    # Paste original image onto white background
+    result.paste(img, (x, y))
+    
+    # Save the result
+    result.save("graph_square.png")
 
 
 def main():
@@ -77,5 +96,5 @@ def main():
     
     print(f"\nFinal answer has been written to: {output_file}")
 
-if __name__ == "__main__":
-    main()
+#if __name__ == "__main__":
+#    main()
